@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>ROOM.html</h1>
+    <div class="msg-box">
+        <h2>Chat Room: {{room}}</h2>
+        <div class="msg" id="msg"></div>
+        <div class="inputs">
+            <input type="text" row="3" placeholder="Message" name="message" id="message">
+            <button type="button" name="send" id="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script src="{{url_for('static',filename='js/room.js')}}"></script>
 {% endblock %}
