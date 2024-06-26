@@ -1,5 +1,4 @@
 var socketio = io();
-
 const messages = document.getElementById("messages");
 
 const createMessage = (name, msg) => {
