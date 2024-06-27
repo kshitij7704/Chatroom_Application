@@ -1,0 +1,195 @@
+.content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: 80vh;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.message-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.muted {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.message-box .messages {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-y: scroll;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.message-box .messages:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-box .inputs {
+    display: flex;
+    width: 100%;
+    align-items: end;
+}
+
+.message-box .inputs input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.message-box .inputs input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.message-box .inputs button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+.message-box .inputs button:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.muted {
+    font-size: 0.7em;
+    color: #888;
+}
+
+.text {
+    background-color: #333;
+    color: #fff;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    width: fit-content;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styling for 1024px */
+@media (max-width: 1024px) {
+    .content {
+        width: 80%;
+        height: 75vh;
+    }
+    
+    .message-box .messages {
+        height: 70%;
+    }
+
+    .message-box .inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .message-box .inputs input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .message-box .inputs button {
+        width: 100%;
+    }
+}
+
+/* Responsive styling for 768px */
+@media (max-width: 768px) {
+    .content {
+        width: 90%;
+        height: 70vh;
+    }
+
+    .message-box .messages {
+        height: 65%;
+    }
+
+    .message-box .inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .message-box .inputs input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .message-box .inputs button {
+        width: 100%;
+    }
+}
+
+/* Responsive styling for 600px */
+@media (max-width: 600px) {
+    .content {
+        width: 95%;
+        height: 65vh;
+        padding: 15px;
+    }
+
+    .message-box .messages {
+        height: 60%;
+    }
+
+    .message-box .inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .message-box .inputs input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .message-box .inputs button {
+        width: 100%;
+    }
+}
