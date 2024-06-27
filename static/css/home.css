@@ -1,13 +1,28 @@
 .content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.con1, .con2 {
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    width: 25%;
+    width: 45%;
     max-width: 400px;
+    height: auto;
     animation: fadeIn 0.5s ease-in-out;
 }
-  
+
+.con2 {
+    padding: 25px;
+}
+
 form.main {
     display: flex;
     flex-direction: column;
@@ -32,7 +47,6 @@ form.main input[type="text"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    box-sizing: border-box;
     margin-bottom: 10px;
     transition: border-color 0.3s;
 }
@@ -54,27 +68,24 @@ form.main .join input[type="text"] {
 
 form.main .join button,
 form.main .create-btn {
-    padding: 10px 10px;
+    padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #28a745;
     color: #fff;
     cursor: pointer;
     width: 100%;
     max-width: 120px;
     margin-top: 5px;
-    box-sizing: border-box;
     transition: background-color 0.3s;
 }
 
 form.main .join button {
+    background-color: #28a745;
     margin-left: 0px;
-    text-align: center;
 }
 
 form.main .create-btn {
     background-color: #007bff;
-    text-align: center;
 }
 
 form.main .join button:hover,
@@ -106,111 +117,34 @@ form.main h4 {
 /* Responsive styling for 1024px */
 @media (max-width: 1024px) {
     .content {
-        width: 50%;
-        padding: 20px;
+        flex-direction: column;
+    }
+
+    .con1, .con2 {
+        width: 80%;
+        margin-bottom: 20px;
     }
 }
 
 /* Responsive styling for 768px */
 @media (max-width: 768px) {
-    .content {
-        width: 75%;
-        padding: 20px;
-    }
-
-    form.main .join {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    form.main .join button {
-        width: 100%;
-        margin-top: 10px;
-        margin-left: 0;
+    .con1, .con2 {
+        width: 90%;
     }
 }
 
 /* Responsive styling for 600px */
 @media (max-width: 600px) {
     .content {
-        width: 95%;
-        padding: 15px;
-    }
-
-    form.main .join {
         flex-direction: column;
-        align-items: center;
+        width: 100%;
     }
 
-    form.main .join button {
-        width: 90%;
-        margin-top: 10px;
-        margin-left: 0;
+    .con1 {
+        margin-top: 35px;
+    }
+
+    .con1, .con2 {
+        width: 80%;
     }
 }
-
-
-
-  /* .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .join {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-  
-  .create-btn {
-    width: 100%;
-  }
-  
-  .message-box {
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 10px;
-    background-color: whitesmoke;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    align-items: stretch;
-  }
-  
-  .messages {
-    overflow-y: scroll;
-    flex: 1;
-    width: 100%;
-  }
-  
-  .inputs {
-    padding: 10px;
-    display: flex;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  #message {
-    flex: 1;
-  }
-  
-  .text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  .muted {
-    font-size: 10px;
-    color: darkgray;
-  } */

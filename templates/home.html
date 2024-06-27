@@ -5,18 +5,30 @@
 {% endblock %}
 
 {% block content %}
-    <form method="post" class="main">
-        <h3>Enter a Chat Room</h3>
-        <div>
-            <input type="text" name="name" placeholder="Enter a name" value="{{name}}">
-        </div>
-        <div class="join">
-            <input type="text" name="code" placeholder="Enter a room code" value="{{code}}">
-            <button type="submit" name="join" class="join">Join Room</button>
-        </div>
-        <button type="submit" name="create" class="create-btn">Create Room</button>
-        {% if error %}
-            <h4>{{error}}</h4>
-        {% endif %}
-    </form>
+    <div class="con1">
+        <h3>Welcome to this simple chatroom application</h3>
+        <p>How to use this chat room?</p>
+        <ul>
+            <li>To create a chat room enter your name and click on <b>Create Room</b> to create a new chatroom.</li>
+            <li>A unique 4 letter code will be generated.</li>
+            <li>To join an exisiting chat room enter your name and the unique generated code and click on the <b>Join Room</b>.</li>
+            <li>Once you join a chat room you can start chatting with other users.</li>
+        </ul>
+    </div>
+    <div class="con2">
+        <form method="post" class="main">
+            <h3>Enter a Chat Room</h3>
+            <div>
+                <input type="text" name="name" placeholder="Enter a name" value="{{name}}">
+            </div>
+            <div class="join">
+                <input type="text" name="code" placeholder="Enter a room code" value="{{code}}">
+                <button type="submit" name="join" class="join">Join Room</button>
+            </div>
+            <button type="submit" name="create" class="create-btn">Create Room</button>
+            {% if error %}
+                <h4>{{error}}</h4>
+            {% endif %}
+        </form>
+    </div>
 {% endblock %}
