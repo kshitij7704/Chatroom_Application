@@ -1,6 +1,7 @@
 const createMessage = (name, msg, isUser) => {
   const messageContainer = document.createElement('div');
   const messageClass = isUser ? 'my-message' : 'other-message';
+  const msg = document.getElementById('message');
   
   messageContainer.classList.add(messageClass);
   
@@ -28,3 +29,10 @@ const sendMessage = () => {
   socketio.emit("message", { data: message.value });
   message.value = "";
 };
+
+msg.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+      event.preventDefault();
+      sendMessage();
+  }
+});
