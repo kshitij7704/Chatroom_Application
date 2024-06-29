@@ -1,3 +1,4 @@
+/* General styles */
 .content {
     background-color: #fff;
     padding: 20px;
@@ -89,21 +90,42 @@
     width: 100%;
 }
 
-.muted {
-    font-size: 0.7em;
-    color: #888;
-}
-
-.text {
-    background-color: #333;
+/* Styles for user and other messages */
+.my-message {
+    background-color: #007bff;
     color: #fff;
-    margin: 5px;
+    align-self: flex-end;
+    text-align: left;
+    margin-left: auto;
+    margin-right: 10px;
     border-radius: 10px;
     padding: 10px;
-    width: fit-content;
-    max-width: 80%;
-    animation: fadeIn 0.3s ease-in-out;
+    max-width: 45%;
+    word-wrap: break-word;
+    margin-bottom: 5px;
 }
+
+.other-message {
+    background-color: #f1f0f0;
+    color: #000;
+    align-self: flex-start;
+    text-align: left;
+    margin-right: auto;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 45%;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+}
+
+.muted {
+    font-size: 0.7em;
+    color: #323232;
+    text-align: right;
+    display: block;
+}
+
 
 /* Animations */
 @keyframes fadeIn {

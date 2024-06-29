@@ -13,10 +13,45 @@
     <button type="button" name="send" id="send-btn" onClick="sendMessage()">Send</button>
   </div>
 </div>
-<script src="{{url_for('static',filename='js/room.js')}}"></script>
+<script>
+    const socketio = io();
+    const messages = document.getElementById("messages");
+    const username = "{{ session.get('name') }}";
+    
+    const createMessage = (name, msg, isUser) => {
+        const messageContainer = document.createElement('div');
+        const messageClass = isUser ? 'my-message' : 'other-message';
+        
+        messageContainer.classList.add(messageClass);
+        
+        const messageContent = `
+            <div>
+                <strong>${name}</strong>: ${msg}
+            </div>
+            <div class="muted">
+                ${new Date().toLocaleString()}
+            </div>
+        `;
+        
+        messageContainer.innerHTML = messageContent;
+        messages.appendChild(messageContainer);
+    };
+    
+    socketio.on("message", (data) => {
+        const isUser = data.name === username;
+        createMessage(data.name, data.message, isUser);
+    });
+
+    const sendMessage = () => {
+        const message = document.getElementById("message");
+        if (message.value == "") return;
+        socketio.emit("message", { data: message.value });
+        message.value = "";
+    };
+</script>
 {% for msg in messages %}
 <script type="text/javascript">
-  createMessage("{{msg.name}}", "{{msg.message}}");
+  createMessage("{{msg.name}}", "{{msg.message}}", "{{msg.name}}" === "{{session.get('name')}}");
 </script>
 {% endfor %} 
 

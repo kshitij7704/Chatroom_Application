@@ -1,22 +1,25 @@
-var socketio = io();
-const messages = document.getElementById("messages");
-
-const createMessage = (name, msg) => {
-  const content = `
-  <div class="text">
-      <span>
-          <strong>${name}</strong>: ${msg}
-      </span>
-      <span class="muted">
-          ${new Date().toLocaleString()}
-      </span>
-  </div>
+const createMessage = (name, msg, isUser) => {
+  const messageContainer = document.createElement('div');
+  const messageClass = isUser ? 'my-message' : 'other-message';
+  
+  messageContainer.classList.add(messageClass);
+  
+  const messageContent = `
+    <div>
+      <strong>${name}</strong>: ${msg}
+    </div>
+    <div class="muted">
+      ${new Date().toLocaleString()}
+    </div>
   `;
-  messages.innerHTML += content;
+  
+  messageContainer.innerHTML = messageContent;
+  messages.appendChild(messageContainer);
 };
 
 socketio.on("message", (data) => {
-  createMessage(data.name, data.message);
+  const isUser = data.name === '{{ session.get("name") }}';
+  createMessage(data.name, data.message, isUser);
 });
 
 const sendMessage = () => {
