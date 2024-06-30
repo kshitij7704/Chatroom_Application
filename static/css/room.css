@@ -199,6 +199,14 @@
         padding: 15px;
     }
 
+    .content {
+        height: 70vh;
+    }
+
+    .message-box {
+        height: 100%;
+    }
+
     .message-box .messages {
         height: 60%;
     }
