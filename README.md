@@ -10,7 +10,7 @@ ChatMate is a lightweight and straightforward chatroom application built using F
 ## Setup Instructions
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Chatroom_Application.git
+git clone https://github.com/kshitij7704/Chatroom_Application.git
 cd Chatroom_Application
 ```
 2. Create a virtual environment:
